@@ -42,8 +42,6 @@ public class Intructivo extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -63,21 +61,17 @@ public class Intructivo extends javax.swing.JFrame {
 
         jButton1.setText("Agregar perro");
 
-        jLabel7.setText("2. Buscar perro: Escribe el nombre y haz clic en \"Buscar\".");
+        jLabel7.setText("2. Buscar perro: Escribe el nombre y haz clic en \"Adoptar\".");
 
-        jButton2.setText("Buscar texto");
+        jButton2.setText("Adoptar");
 
         jLabel8.setText("3. Listar perros: Haz clic en \"Listar todos\" para ver todos los registros.");
 
-        jButton3.setText("Listar textos");
+        jButton3.setText("Listar todos");
 
         jLabel9.setText("4. Actualizar adopción: Busca al perro, marca como adoptado y guarda.");
 
         jButton4.setText("Actualizar adopcion");
-
-        jLabel10.setText("5. Acerca de/Instructivo: Usa el menú para más información.");
-
-        jButton5.setText("Menu");
 
         jButton6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton6.setText("Cerrar");
@@ -120,12 +114,7 @@ public class Intructivo extends javax.swing.JFrame {
                         .addGap(20, 20, 20)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9)
-                            .addComponent(jButton4)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jButton4))))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -161,11 +150,7 @@ public class Intructivo extends javax.swing.JFrame {
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton4)
-                .addGap(25, 25, 25)
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addComponent(jButton6)
                 .addGap(29, 29, 29))
         );
@@ -217,10 +202,8 @@ public class Intructivo extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

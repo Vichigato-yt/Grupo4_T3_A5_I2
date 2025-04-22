@@ -58,7 +58,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Logo UETS.png"))); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel3.setText("PRACTICA: VECTORES CON MVC");
+        jLabel3.setText("Sistema de Rescate y Adopcion de Perros");
 
         jMenu1.setText("Opciones");
 
@@ -100,12 +100,13 @@ public class Principal extends javax.swing.JFrame {
                                 .addComponent(jLabel2))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(265, 265, 265)
-                                .addComponent(jLabel4))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(185, 185, 185)
-                                .addComponent(jLabel3)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addComponent(jLabel4)))
+                        .addGap(0, 241, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(170, 170, 170)
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)

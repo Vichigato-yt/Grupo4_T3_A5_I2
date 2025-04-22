@@ -49,4 +49,23 @@ public class Modelo {
             return false;
         }
     }
+    public void Adoptar(String dato, int posicion){
+        if (posicion >= 0 && posicion < linea) {
+            System.out.print("El perro fue adoptado correctamente :3");
+            Perros[posicion] = "Adoptado";
+        } else {
+            System.out.println("Error: Posición fuera del rango.");
+        }
+    }
+    public void Lista(){
+        if (Perros == null) {
+            System.out.println("Error: No se ha creado el vector.");
+        }
+        else{
+            for (int i = 0 ; i>Perros.length ; i++){
+                System.out.println(Perros [i]);
+            }
+        }
+    }
+    
 }
