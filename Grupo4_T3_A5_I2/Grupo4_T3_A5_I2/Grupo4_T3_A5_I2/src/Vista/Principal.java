@@ -17,9 +17,7 @@ public class Principal extends javax.swing.JFrame {
         Adoptar adoptar = new Adoptar();
         Agregar ingresar = new Agregar();
         Lista lista = new Lista(); 
-        objContr = new Controlador(acerca, this, objModelo, Instructivo, lista, ingresar, adoptar);
-        mAdoptar.setEnabled(false);
-        mLista.setEnabled(false);        
+        objContr = new Controlador(acerca, this, objModelo, Instructivo, lista, ingresar, adoptar);     
     }
     /**
      * This method is called from within the constructor to initialize the form.

@@ -50,61 +50,51 @@ public class Controlador implements ActionListener{
     }
 
     @Override
-    public void actionPerformed(ActionEvent e){
-        Object botonPresionado = e.getSource();
+     public void actionPerformed(ActionEvent e) {
+        // Se maneja el evento según el origen del evento
         if (e.getSource() == $Principal.mAcerca) {
             $Acerca.setVisible(true);
         }
-
-        // Menú: Instructivo
-        if (e.getSource() == $Principal.mInstructivo) {
-            $Instructivo.setVisible(true);
-        }
-
-        // Menú: Agregar perro
-        if (e.getSource() == $Principal.mAgregar) {
-            $Agregar.setVisible(true);
-        }
-
-        // Menú: Adoptar perro
         if (e.getSource() == $Principal.mAdoptar) {
             $Adoptar.setVisible(true);
         }
-
-        // Menú: Ver lista
+        if (e.getSource() == $Principal.mInstructivo) {
+            $Instructivo.setVisible(true);
+        }
         if (e.getSource() == $Principal.mLista) {
             $Lista.setVisible(true);
         }
-
-        // Botón: Cerrar Acerca
-        if (e.getSource() == $Acerca.btnCerrar) {
-            $Acerca.setVisible(false);
+        if (e.getSource() == $Principal.mAgregar) {
+            $Agregar.setVisible(true);
         }
-
-        // Botón: Cerrar Instructivo
-        if (e.getSource() == $Instructivo.btnCerrar) {
-            $Instructivo.setVisible(false);
+        if (e.getSource() == $Acerca.btnCerrar || e.getSource() == $Instructivo.btnCerrar ||
+            e.getSource() == $Adoptar.btnCerrar || e.getSource() == $Lista.btnCerrar) {
+            // Cerrar las ventanas
+            ((javax.swing.JFrame) ((javax.swing.JButton) e.getSource()).getTopLevelAncestor()).setVisible(false);
         }
-
-        // Botón: Enviar (Agregar)
         if (e.getSource() == $Agregar.btnEnviar) {
-            
+            // Obtener el nombre del perro desde el text field y agregarlo al modelo
+            String nombrePerro = $Agregar.txtNombre.getText();
+            int posicion = $objModelo.getDato();
+            if ($objModelo.IngresoDatos(nombrePerro, posicion)) {
+                // Aumentar el dato (número de perro ingresado) en el modelo
+                $objModelo.setDato(posicion + 1);
+            }
         }
-
-        // Botón: Adoptar
-        if (e.getSource() == $Adoptar.EnvioAdopcion) {
-            
-        }
-
-        // Botón: Cerrar Adoptar
         if (e.getSource() == $Adoptar.btnCerrar) {
-            $Adoptar.setVisible(false);
-        }
-
-        // Botón: Cerrar Lista
-        if (e.getSource() == $Lista.btnCerrar) {
-            $Lista.setVisible(false);
+            // Adoptar el perro
+            try {
+                int posicion = Integer.parseInt($Adoptar.txtCelda.getText());
+                if (posicion >= 0 && posicion < $objModelo.getLinea()) {
+                    String nombrePerro = $objModelo.getPerros()[posicion];
+                    $Adoptar.lblNombre.setText("Perro adoptado: " + nombrePerro);
+                    $objModelo.Adoptar(nombrePerro, posicion);
+                } else {
+                    $Adoptar.lblNombre.setText("Posición inválida.");
+                }
+            } catch (NumberFormatException ex) {
+                $Adoptar.lblNombre.setText("Ingrese un número válido.");
+            }
         }
     }
-
-    }
+}

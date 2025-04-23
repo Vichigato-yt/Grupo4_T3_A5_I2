@@ -30,10 +30,10 @@ public class Adoptar extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        CeldaAdopcion = new javax.swing.JTextField();
+        txtCelda = new javax.swing.JTextField();
         EnvioAdopcion = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
         btnCerrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -54,9 +54,9 @@ public class Adoptar extends javax.swing.JFrame {
 
         jLabel3.setText("Ingrese la celda de el Perro: ");
 
-        CeldaAdopcion.addActionListener(new java.awt.event.ActionListener() {
+        txtCelda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CeldaAdopcionActionPerformed(evt);
+                txtCeldaActionPerformed(evt);
             }
         });
 
@@ -69,7 +69,7 @@ public class Adoptar extends javax.swing.JFrame {
 
         jLabel4.setText("El animal que usted adopto es:");
 
-        jLabel5.setText("...");
+        lblNombre.setText("...");
 
         btnCerrar.setText("Cerrar");
         btnCerrar.addActionListener(new java.awt.event.ActionListener() {
@@ -101,12 +101,12 @@ public class Adoptar extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
-                        .addComponent(CeldaAdopcion)
+                        .addComponent(txtCelda)
                         .addGap(47, 47, 47))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel5)
+                        .addComponent(lblNombre)
                         .addGap(156, 156, 156))))
         );
         layout.setVerticalGroup(
@@ -119,13 +119,13 @@ public class Adoptar extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(CeldaAdopcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCelda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(EnvioAdopcion)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jLabel5))
+                    .addComponent(lblNombre))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addComponent(btnCerrar)
                 .addContainerGap())
@@ -134,9 +134,9 @@ public class Adoptar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CeldaAdopcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CeldaAdopcionActionPerformed
+    private void txtCeldaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCeldaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CeldaAdopcionActionPerformed
+    }//GEN-LAST:event_txtCeldaActionPerformed
 
     private void EnvioAdopcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnvioAdopcionActionPerformed
         // TODO add your handling code here:
@@ -182,13 +182,13 @@ public class Adoptar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JTextField CeldaAdopcion;
     public javax.swing.JButton EnvioAdopcion;
     public javax.swing.JButton btnCerrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    public javax.swing.JLabel lblNombre;
+    public javax.swing.JTextField txtCelda;
     // End of variables declaration//GEN-END:variables
 }
