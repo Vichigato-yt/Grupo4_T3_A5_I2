@@ -36,6 +36,7 @@ public class Controlador implements ActionListener{
         this.$Agregar = $Agregar;
         this.$Adoptar = $Adoptar;
         this.$objModelo = $objModelo;
+        this.$Principal.mAgregar.addActionListener(this);
         this.$Principal.mAcerca.addActionListener(this);
         this.$Principal.mAdoptar.addActionListener(this);
         this.$Principal.mInstructivo.addActionListener(this);
