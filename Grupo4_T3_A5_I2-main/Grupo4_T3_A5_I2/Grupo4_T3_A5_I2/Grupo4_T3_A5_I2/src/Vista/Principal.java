@@ -17,7 +17,8 @@ public class Principal extends javax.swing.JFrame {
         Adoptar adoptar = new Adoptar();
         Agregar ingresar = new Agregar();
         Lista lista = new Lista(); 
-        objContr = new Controlador(acerca, this, objModelo, Instructivo, lista, ingresar, adoptar);     
+        Extension crear = new Extension();
+        objContr = new Controlador(acerca, this, objModelo, Instructivo, lista, ingresar, adoptar, crear);     
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -34,6 +35,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        mCrear = new javax.swing.JMenuItem();
         mAgregar = new javax.swing.JMenuItem();
         mLista = new javax.swing.JMenuItem();
         mAdoptar = new javax.swing.JMenuItem();
@@ -64,6 +66,9 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jMenu1.setText("Opciones");
+
+        mCrear.setText("Crear");
+        jMenu1.add(mCrear);
 
         mAgregar.setText("Agregar");
         jMenu1.add(mAgregar);
@@ -184,6 +189,7 @@ public class Principal extends javax.swing.JFrame {
     public javax.swing.JMenuItem mAcerca;
     public javax.swing.JMenuItem mAdoptar;
     public javax.swing.JMenuItem mAgregar;
+    public javax.swing.JMenuItem mCrear;
     public javax.swing.JMenuItem mInstructivo;
     public javax.swing.JMenuItem mLista;
     public javax.swing.JMenuItem mSalir;

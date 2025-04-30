@@ -8,6 +8,7 @@ import Vista.Intructivo;
 import Vista.Lista;
 import Vista.Agregar;
 import Vista.Adoptar;
+import Vista.Extension;
 //importo ActionEvent
 import java.awt.event.ActionEvent;
 //importo ActionListener para poder escuchar lo que hace
@@ -22,31 +23,35 @@ public class Controlador implements ActionListener{
     private Intructivo $Instructivo;
     private Lista $Lista;
     private Agregar $Agregar;
-    private Adoptar $Adoptar;    
+    private Adoptar $Adoptar;
+    private Extension $Crear;
     //Objeto Modelo para el Modelo MVC
     private Modelo $objModelo;
     String r;
     
     public Controlador(Acercade $Acerca,Principal $Principal, Modelo $objModelo,Intructivo $Instructivo,
-                        Lista $Lista, Agregar $Agregar,Adoptar $Adoptar) {
+                        Lista $Lista, Agregar $Agregar,Adoptar $Adoptar, Extension $Crear) {
         this.$Principal = $Principal;
         this.$Acerca = $Acerca;
         this.$Instructivo = $Instructivo;
         this.$Lista = $Lista;
         this.$Agregar = $Agregar;
         this.$Adoptar = $Adoptar;
+        this.$Crear = $Crear;
         this.$objModelo = $objModelo;
         this.$Principal.mAgregar.addActionListener(this);
         this.$Principal.mAcerca.addActionListener(this);
         this.$Principal.mAdoptar.addActionListener(this);
         this.$Principal.mInstructivo.addActionListener(this);
         this.$Principal.mLista.addActionListener(this);
-        this.$Principal.mInstructivo.addActionListener(this);
-        this.$Principal.mAcerca.addActionListener(this);
+        this.$Principal.mCrear.addActionListener(this);
         this.$Acerca.btnCerrar.addActionListener(this);
         this.$Instructivo.btnCerrar.addActionListener(this);
         this.$Agregar.btnEnviar.addActionListener(this);
+        this.$Adoptar.EnvioAdopcion.addActionListener(this);
         this.$Adoptar.btnCerrar.addActionListener(this);
+        this.$Crear.btnSubir.addActionListener(this);
+        this.$Crear.btnCerrar.addActionListener(this);
         this.$Lista.btnCerrar.addActionListener(this);
     }
 
@@ -68,10 +73,16 @@ public class Controlador implements ActionListener{
         if (e.getSource() == $Principal.mAgregar) {
             $Agregar.setVisible(true);
         }
-        if (e.getSource() == $Acerca.btnCerrar || e.getSource() == $Instructivo.btnCerrar ||
-            e.getSource() == $Adoptar.btnCerrar || e.getSource() == $Lista.btnCerrar) {
+        if (e.getSource() == $Principal.mCrear){
+            $Crear.setVisible(true);
+        }
+        if (e.getSource() == $Acerca.btnCerrar || e.getSource() == $Instructivo.btnCerrar || e.getSource() == $Agregar.btnCerrar ||
+            e.getSource() == $Adoptar.btnCerrar || e.getSource() == $Lista.btnCerrar || e.getSource() == $Crear.btnCerrar) {
             // Cerrar las ventanas
             ((javax.swing.JFrame) ((javax.swing.JButton) e.getSource()).getTopLevelAncestor()).setVisible(false);
+        }
+        if (e.getSource() == $Crear.btnSubir) {
+          $objModelo.CreaVector(Integer.parseInt($Crear.txtPerros.getText()));
         }
         if (e.getSource() == $Agregar.btnEnviar) {
             // Obtener el nombre del perro desde el text field y agregarlo al modelo
@@ -82,7 +93,7 @@ public class Controlador implements ActionListener{
                 $objModelo.setDato(posicion + 1);
             }
         }
-        if (e.getSource() == $Adoptar.btnCerrar) {
+        if (e.getSource() == $Adoptar.EnvioAdopcion) {
             // Adoptar el perro
             try {
                 int posicion = Integer.parseInt($Adoptar.txtCelda.getText());
@@ -97,5 +108,6 @@ public class Controlador implements ActionListener{
                 $Adoptar.lblNombre.setText("Ingrese un número válido.");
             }
         }
+        
     }
 }
